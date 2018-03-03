@@ -1,0 +1,2 @@
+make
+serverless deploy -v
