@@ -1,2 +1,3 @@
 make
-serverless deploy -v
+sls create_domain
+serverless deploy --verbose

@@ -5,26 +5,6 @@ provider:
   runtime: go1.x
   memorySize: 128
 
-# you can overwrite defaults here
-#  stage: dev
-#  region: us-east-1
-
-# you can add statements to the Lambda function's IAM Role here
-#  iamRoleStatements:
-#    - Effect: "Allow"
-#      Action:
-#        - "s3:ListBucket"
-#      Resource: { "Fn::Join" : ["", ["arn:aws:s3:::", { "Ref" : "ServerlessDeploymentBucket" } ] ]  }
-#    - Effect: "Allow"
-#      Action:
-#        - "s3:PutObject"
-#      Resource:
-#        Fn::Join:
-#          - ""
-#          - - "arn:aws:s3:::"
-#            - "Ref" : "ServerlessDeploymentBucket"
-#            - "/*"
-
 package:
  exclude:
    - ./**
@@ -37,15 +17,10 @@ plugins:
 custom:
   customDomain:
     certificateName: "*.danielspeixoto.com"
-    domainName: helloworld.danielspeixoto.com
-    basePath: ''
-    stage: ${self:provider.stage}
-    createRoute53Record: true
+    domainName: helloworld.dev.danielspeixoto.com
 
 functions:
   hello:
     handler: bin/hello
     events:
-    - http:
-        path: hello
-        method: get
+    - http: GET hello
