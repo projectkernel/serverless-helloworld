@@ -5,3 +5,9 @@
 bin
 
 node_modules
+
+*.vscode
+
+*.test
+
+*.idea

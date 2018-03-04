@@ -16,7 +16,7 @@ plugins:
 
 custom:
   customDomain:
-    certificateName: "*.danielspeixoto.com"
+    certificateName: "*.dev.danielspeixoto.com"
     domainName: helloworld.dev.danielspeixoto.com
 
 functions:
