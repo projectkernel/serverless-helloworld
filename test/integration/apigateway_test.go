@@ -20,8 +20,7 @@ func TestApiGatewayIntegration(t *testing.T) {
 	if resp.StatusCode != 200 {
 		t.Error("Status Code: " + string(resp.StatusCode))
 	}
-	if string(body) != "Hello World" {
+	if string(body) != `{"message":"Hello World"}` {
 		t.Error("Response was = " + string(body))
 	}
-	
 }
