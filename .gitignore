@@ -11,3 +11,9 @@ node_modules
 *.test
 
 *.idea
+
+log
+
+reports
+
+tmp
